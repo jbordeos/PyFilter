@@ -1,0 +1,558 @@
+<ons-page id="main">
+  <style type="text/css">
+
+
+    /* Bootstrap 4 text input with search icon */
+    .page__content,.page--material__content{
+        background: #fff !important;
+      }
+
+    .has-search .form-control {
+        padding-left: 0.375rem;
+    }
+
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+    }
+    .manufacturer{
+      font-size: 12px !important;
+    }
+    .btn-grey{
+        background-color:#D8D8D8;
+      color:#FFF;
+    }
+    .rating-block{
+      background-color:#FAFAFA;
+      border:1px solid #EFEFEF;
+      padding:15px 15px 20px 15px;
+      border-radius:3px;
+    }
+    .bold{
+      font-weight:700;
+    }
+    .padding-bottom-7{
+      padding-bottom:7px;
+    }
+
+    .review-block{
+      background-color:#FAFAFA;
+      border:1px solid #EFEFEF;
+      padding:15px;
+      border-radius:3px;
+      margin-bottom:15px;
+    }
+    .review-block-name{
+      font-size:12px;
+      margin:10px 0;
+    }
+    .review-block-date{
+      font-size:12px;
+    }
+    .review-block-rate{
+      font-size:13px;
+      margin-bottom:15px;
+    }
+    .review-block-title{
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    .review-block-description{
+      font-size:13px;
+    }
+    .owl-carousel .owl-stage {
+      display: flex;
+      align-items: center;
+    }
+    .progress-bar{
+      height: 10px !important;
+      border-radius: 10px;
+    }
+    #pressure{
+      padding:0 !important;
+    }
+    .myProgress {
+      width: 100%;
+      background-color: #fff;
+      /* padding: 0 10px 0 10px; */
+    }
+
+    #myBar-temp {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+
+    #myBar-pres {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+
+    #myBar-alt {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+
+    #myBar-s1 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+    #myBar-s2 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+    #myBar-s3 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+    #myBar-s4 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+    #myBar-s5 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+    #myBar-s6 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+    #myBar-s7 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+    #myBar-s8 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+
+    #myBar-s11,#myBar-s22,#myBar-s33,#myBar-s44,#myBar-s55,#myBar-s66,#myBar-s77,#myBar-s88 {
+      height: 30px;
+      background-color: #1abc9c;
+      /* border-radius: 10px; */
+    }
+  </style>
+
+  <!-- <ons-pull-hook id="pull-hook">
+      Pull to refresh
+  </ons-pull-hook> -->
+ 
+  
+<!-- <div class="sponsor-carousel owl-carousel" style="position: fixed;bottom:0;background: #fff">
+        
+  <div style="width:50px;height: 50px"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/delmonte.png"/></div>
+  <div style="width:50px;height: 50px"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/purefoods.png"/></div>
+  <div style="width:50px;height: 50px"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/sanmiguel.png"/></div>
+  <div style="width:50px;height: 50px"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/jacknjill.png"/></div>
+  <div style="width:50px;height: 50px"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/selecta.png"/></div>
+  <div style="width:50px;height: 50px"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/alaska.png"/></div>
+
+</div> -->
+<ons-toolbar style="background: #10264f;position: fixed">
+  <div class="left" onclick="gotoMain()"><i class="fa fa-chevron-left" style="color:#fff;position: fixed;margin:3%;z-index: -1;background: rgba(0,0,0,0.5);border-radius: 50%;font-size: .8em;padding:8px;padding-left: 10px;padding-right: 12px"></i><ons-back-button style="color: #ddd !important"></ons-back-button></div>
+  <div class="center" id="tower-id" style="color: #fff;"></div>
+  <!-- <div class="right">
+    <i class="fa fa-shopping-cart" style="position: fixed;top: 1%;right: 2%;color:#fff;margin:2%;z-index: -1;background: rgba(0,0,0,0.5);border-radius: 50%;font-size: .8em;padding:8px"></i>
+    <span class="new badge" style="color:#fff;position:absolute;right:1%;top:3%;border-radius: 50% !important;min-width: .25rem !important;background: #F75C4C !important" data-badge-caption="" id="totcart2">0</span>
+
+  </div> -->
+</ons-toolbar>
+<div class="owl-carousel owl-theme och" id="och">
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="allData()">All Data</ons-button></div>
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="show1()">PM1.0</ons-button></div>
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="show2()">PM2.5</ons-button></div>
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="show3()">PM4.0</ons-button></div>
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="show4()">PM 10.0</ons-button></div>
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="show5()">A.Humidity</ons-button></div>
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="show6()">A.Temperature</ons-button></div>
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="show7()">VOC index</ons-button></div>
+  <div class="item" style="padding: 5px;"><ons-button style="width: 100%; " onclick="show8()">D.Pressure</ons-button></div>
+ 
+  
+</div>
+
+  <div class="page-content">
+    <!-- <ons-row style="text-align: center;display: none;">
+      <h3 style="width: 100%;">Fan Control</h3>
+    </ons-row> -->
+     <ons-row style="text-align: center;">
+      <h3 style="width: 100%;">Fan Control</h3>
+    </ons-row>
+    <ons-row>
+      <ons-col width="40px" style="text-align: center; line-height: 31px;">
+        <ons-icon icon="md-volume-down" id="fan-down" onclick="volDown()"></ons-icon>
+      </ons-col>
+      <ons-col>
+        <ons-range id="speed-fan" style="width: 100%;" value="0"  onchange="showVal(this.value)"></ons-range>
+      </ons-col>
+      <ons-col width="40px" style="text-align: center; line-height: 31px;">
+        <ons-icon icon="md-volume-up"  id="fan-up" onclick="volUp()"></ons-icon>
+      </ons-col>
+    </ons-row>
+    <!-- <ons-row>
+      <br>
+      <ons-button style="width: 100%; " onclick="connectDevice()">Connect a Device</ons-button>
+    </ons-row> -->
+    <div class="wrapper fadeInDown" id="all-data">
+      <div id="formContent" style="margin:10px">
+         <!-- Icon -->
+       
+
+        <!-- Tabs Titles -->
+        <h2 class="active" style="width: 100%;text-align: center;" id="device-conn">  </h2>
+        <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+       
+        <div style="margin:  auto;width: 100%;margin-bottom:10px">
+          <span>PM1.0</span>
+          : <span id="s11-val" style="width: 100%;text-align: center;font-size: 1.5em;"></span>
+          <div class="myProgress">
+            <div class="myBar" id="myBar-s11"></div>
+          </div>
+          <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+        </div>
+
+        <div style="margin:  auto;width: 100%;margin-bottom:10px">
+           <span>PM2.5</span>
+          : <span id="s22-val" style="width: 100%;text-align: center;font-size: 1.5em;"></span>
+          <div class="myProgress">
+            <div class="myBar" id="myBar-s22"></div>
+          </div>
+          <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+        </div>
+
+        <div style="margin:  auto;width: 100%;margin-bottom:10px">
+           <span>PM4.0</span>
+          : <span id="s33-val" style="width: 100%;text-align: center;font-size: 1.5em;"></span>
+          <div class="myProgress">
+            <div class="myBar" id="myBar-s33"></div>
+          </div>
+          <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+        </div>
+
+        <div style="margin:  auto;width: 100%;margin-bottom:10px">
+           <span>PM 10.0</span>
+          : <span id="s44-val" style="width: 100%;text-align: center;font-size: 1.5em;"></span>
+          <div class="myProgress">
+            <div class="myBar" id="myBar-s44"></div>
+          </div>
+          <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+        </div>
+
+        <div style="margin:  auto;width: 100%;margin-bottom:10px">
+           <span>A.Humidity</span>
+          : <span id="s55-val" style="width: 100%;text-align: center;font-size: 1.5em;"></span>
+          <div class="myProgress">
+            <div class="myBar" id="myBar-s55"></div>
+          </div>
+          <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+        </div>
+
+        <div style="margin:  auto;width: 100%;margin-bottom:10px">
+           <span>A.Temperature</span>
+          : <span id="s66-val" style="width: 100%;text-align: center;font-size: 1.5em;"></span>
+          <div class="myProgress">
+            <div class="myBar" id="myBar-s66"></div>
+          </div>
+          <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+        </div>
+
+        <div style="margin:  auto;width: 100%;margin-bottom:10px">
+           <span>VOC index</span>
+          : <span id="s77-val" style="width: 100%;text-align: center;font-size: 1.5em;"></span>
+          <div class="myProgress">
+            <div class="myBar" id="myBar-s77"></div>
+          </div>
+          <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+        </div>
+
+        <div style="margin:  auto;width: 100%;margin-bottom:10px">
+          <span>D.Pressure</span>
+         : <span id="s88-val" style="width: 100%;text-align: center;font-size: 1.5em;"></span>
+         <div class="myProgress">
+           <div class="myBar" id="myBar-s88"></div>
+         </div>
+         <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+       </div>
+
+      </div>
+    </div>
+    <div class="wrapper fadeInDown" id="s1" style="display:none">
+        <div id="formContent" style="width: 100%">
+           <!-- Icon -->
+         
+
+          <!-- Tabs Titles -->
+          <h2 class="active" style="width: 100%;text-align: center;"> PM1.0 </h2>
+          <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+         
+          <div style="margin:  auto;width: 100%">
+            <p id="s1-val" style="width: 100%;text-align: center;font-size: 5em;"></p>
+            <div class="myProgress">
+              <div class="myBar" id="myBar-s1"></div>
+            </div>
+            <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+          </div>
+
+          <ons-card style="text-align: center;padding: 0 !important;margin: 0 !important;">
+            <canvas id="s1Chart"></canvas>
+          </ons-card>
+
+        </div>
+      </div>
+
+      <div class="wrapper fadeInDown" id="s2" style="display: none">
+        <div id="formContent" style="width: 100%">
+           <!-- Icon -->
+         
+
+          <!-- Tabs Titles -->
+          <h2 class="active" style="width: 100%;text-align: center;"> PM2.5 </h2>
+          <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+         
+          <div style="margin:  auto;width: 100%">
+            <p id="s2-val" style="width: 100%;text-align: center;font-size: 5em;"></p>
+            <div class="myProgress">
+              <div class="myBar" id="myBar-s2"></div>
+            </div>
+            <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+          </div>
+
+          <ons-card style="text-align: center;padding: 0 !important;margin: 0 !important;">
+            <canvas id="s2Chart"></canvas>
+          </ons-card>
+
+        </div>
+      </div>
+
+      <div class="wrapper fadeInDown" id="s3" style="display: none">
+        <div id="formContent" style="width: 100%">
+           <!-- Icon -->
+         
+
+          <!-- Tabs Titles -->
+          <h2 class="active" style="width: 100%;text-align: center;"> PM4.0 </h2>
+          <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+         
+          <div style="margin:  auto;width: 100%">
+            <p id="s3-val" style="width: 100%;text-align: center;font-size: 5em;"></p>
+            <div class="myProgress">
+              <div class="myBar" id="myBar-s3"></div>
+            </div>
+            <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+          </div>
+
+          <ons-card style="text-align: center;padding: 0 !important;margin: 0 !important;">
+            <canvas id="s3Chart"></canvas>
+          </ons-card>
+
+        </div>
+      </div>
+
+      <div class="wrapper fadeInDown" id="s4" style="display: none">
+        <div id="formContent" style="width: 100%">
+           <!-- Icon -->
+         
+
+          <!-- Tabs Titles -->
+          <h2 class="active" style="width: 100%;text-align: center;"> PM 10.0 </h2>
+          <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+         
+          <div style="margin:  auto;width: 100%">
+            <p id="s4-val" style="width: 100%;text-align: center;font-size: 5em;"></p>
+            <div class="myProgress">
+              <div class="myBar" id="myBar-s4"></div>
+            </div>
+            <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+          </div>
+
+          <ons-card style="text-align: center;padding: 0 !important;margin: 0 !important;">
+            <canvas id="s4Chart"></canvas>
+          </ons-card>
+
+        </div>
+      </div>
+
+      <div class="wrapper fadeInDown" id="s5" style="display: none">
+        <div id="formContent" style="width: 100%">
+           <!-- Icon -->
+         
+
+          <!-- Tabs Titles -->
+          <h2 class="active" style="width: 100%;text-align: center;"> A.Humidity </h2>
+          <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+         
+          <div style="margin:  auto;width: 100%">
+            <p id="s5-val" style="width: 100%;text-align: center;font-size: 5em;"></p>
+            <div class="myProgress">
+              <div class="myBar" id="myBar-s5"></div>
+            </div>
+            <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+          </div>
+
+          <ons-card style="text-align: center;padding: 0 !important;margin: 0 !important;">
+            <canvas id="s5Chart"></canvas>
+          </ons-card>
+
+        </div>
+      </div>
+
+      <div class="wrapper fadeInDown" id="s6" style="display: none">
+        <div id="formContent" style="width: 100%">
+           <!-- Icon -->
+         
+
+          <!-- Tabs Titles -->
+          <h2 class="active" style="width: 100%;text-align: center;"> A.Temperature </h2>
+          <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+         
+          <div style="margin:  auto;width: 100%">
+            <p id="s6-val" style="width: 100%;text-align: center;font-size: 5em;"></p>
+            <div class="myProgress">
+              <div class="myBar" id="myBar-s6"></div>
+            </div>
+            <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+          </div>
+
+          <ons-card style="text-align: center;padding: 0 !important;margin: 0 !important;">
+            <canvas id="s6Chart"></canvas>
+          </ons-card>
+
+        </div>
+      </div>
+
+      <div class="wrapper fadeInDown" id="s7" style="display: none">
+        <div id="formContent" style="width: 100%">
+           <!-- Icon -->
+         
+
+          <!-- Tabs Titles -->
+          <h2 class="active" style="width: 100%;text-align: center;"> VOC index </h2>
+          <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+         
+          <div style="margin:  auto;width: 100%">
+            <p id="s7-val" style="width: 100%;text-align: center;font-size: 5em;"></p>
+            <div class="myProgress">
+              <div class="myBar" id="myBar-s7"></div>
+            </div>
+            <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+          </div>
+
+          <ons-card style="text-align: center;padding: 0 !important;margin: 0 !important;">
+            <canvas id="s7Chart"></canvas>
+          </ons-card>
+
+        </div>
+      </div>
+
+      <div class="wrapper fadeInDown" id="s8" style="display: none">
+        <div id="formContent" style="width: 100%">
+           <!-- Icon -->
+         
+
+          <!-- Tabs Titles -->
+          <h2 class="active" style="width: 100%;text-align: center;"> D.Pressure </h2>
+          <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+         
+          <div style="margin:  auto;width: 100%">
+            <p id="s8-val" style="width: 100%;text-align: center;font-size: 5em;"></p>
+            <div class="myProgress">
+              <div class="myBar" id="myBar-s8"></div>
+            </div>
+            <!-- <ons-progress-bar indeterminate id="tempProg" modifier="material modifier2" style="background: #eee;margin:10px;border-radius: 10px;"></ons-progress-bar> -->
+          </div>
+
+          <ons-card style="text-align: center;padding: 0 !important;margin: 0 !important;">
+            <canvas id="s8Chart"></canvas>
+          </ons-card>
+
+        </div>
+      </div>
+
+   <!--  <header class="page-head">
+
+        <div class="search-bar-background J_SearchBarBackground after-scroll" style="position: fixed; top: 0px;background: #66cccc"></div>
+        <div class="search-bar J_SearchBar" data-module-id="search" data-spm="searchbar">
+
+            <div class="J_SearchWrap search-bar-header" data-spm="1" style="position: fixed; top: 0px;">
+                <a class="search-bar-search J_search align-left inline" data-spm-click="" href="">
+                    <div class="search-bar-search-wrap">
+                        <span class="search-icon"><i class="fa fa-search"></i></span>
+                    </div>
+                </a>
+                <input type="text" class="search-bar-content align-left inline" style="font-size: 14px">
+                    
+                </input>
+
+            </div>
+
+        </div>
+
+    </header>
+    <br>
+    <br>
+    <br>
+    <br> -->
+    <!-- <div class="container" style="padding: 0 !important;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12" style="padding: 0pc !important">
+                <div class="slider-area">
+                    <div class="owl-carousel owl-theme" id="och" style="">
+                        <div class="item"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/1.jpg" style="height:200px"><span class="" style="position: absolute;top: 75%;left: 5%;"></span></div>
+                        <div class="item"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/2.jpg" style="height:200px"><span style="position: absolute;top: 30%;left: 10%;"></span></div>
+                        <div class="item"><img src="http://devcode.7thsignsoftwaresolution.com/sari2storev2/assets/img/3.jpg" style="height:200px"><span style="position: absolute;top: 30%;left: 10%;"></span></div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div> -->
+    
+
+
+
+</div>
+   
+</ons-page>
+
+<!-- <script src="https://fierce-plateau-89068.herokuapp.com/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            var socket = io.connect("https://fierce-plateau-89068.herokuapp.com/");
+
+
+            
+            socket.on("data1", function (data) {
+               console.log(data);
+            });
+
+
+
+        </script> -->

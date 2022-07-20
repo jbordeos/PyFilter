@@ -1,0 +1,72 @@
+<ons-page id="usersplitter">
+  <ons-toolbar style="background: #10264f">
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+          <!-- <img src="img/logo.png" style=" width: 6vh;vertical-align: middle;"> -->
+        </ons-toolbar-button>
+      </div>
+      
+      <div class="right">
+        <span id="app-cart-delete" style="display: none;font-size: 14px;padding-right: 10px;">Delete</span>
+        <!-- <span onClick="gotoLogin()" id="app-home-login" style="display: ;font-size: 14px;padding-right: 10px;">Login</span> -->
+        <ons-toolbar-button style="color:#fff" id="signintoolbtn" onclick="logoutUserform()" icon="ion-square-right, material:md-square-right">
+        
+          <!-- <span class="new badge" style="position:absolute;right:1%;top:3%;border-radius: 10px !important;min-width: 1.7rem !important;background: #c0392b !important" data-badge-caption="" id="totcart2">0</span> -->
+        </ons-toolbar-button>
+        <ons-toolbar-button style="display:none " id="accounttoolbtn" onclick="appnav.showFromTemplate()" icon="ion-account-circle, material:md-account-circle">
+          <!-- <span class="new badge" style="position:absolute;right:1%;top:3%;border-radius: 10px !important;min-width: 1.7rem !important;background: #c0392b !important" data-badge-caption="" id="totcart2">0</span> -->
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse>
+      <ons-page>
+        <ons-list style="font-size: 14px !important;">
+          <ons-list-item modifier="longdivider" tappable>
+            <div class="left">
+              <img class="list-item__thumbnail" src="img/logo.png">
+            </div>
+            <div class="center">
+              <span class="list-item__title">Welcome</span><span class="list-item__subtitle">User</span>
+            </div>
+            <div class="right">
+              <i class="fa fa-pen"></i>
+            </div>
+          </ons-list-item>
+          <ons-list-item modifier="longdivider" tappable onclick="resettoMain()">
+            <div class="left">
+              <i class="fa fa-home"></i>
+            </div>
+            <div class="center">
+              Device
+            </div>
+          </ons-list-item>
+          
+          <ons-list-item modifier="nodivider" tappable>
+            <div class="left">
+              <i class="fa fa-gear"></i>
+            </div>
+            <div class="center">
+              Settings
+            </div>
+          </ons-list-item>
+          <ons-list-item modifier="nodivider" tappable>
+            <div class="left">
+              <i class="fa fa-question-circle"></i>
+            </div>
+            <div class="center">
+              Help
+            </div>
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="device.html"></ons-splitter-content>
+  </ons-splitter>
+
+  
+
+  
+</ons-page>
+

@@ -1,0 +1,134 @@
+<ons-page id="registration">
+
+
+
+<ons-toolbar style="background: transparent !important;position: fixed">
+  <div class="left"><i class="fa fa-chevron-left" style="color:#fff;position: fixed;margin:3%;z-index: -1;background: rgba(0,0,0,0.5);border-radius: 50%;font-size: .8em;padding:8px;padding-left: 10px;padding-right: 12px"></i><ons-back-button style="color: #ddd !important"></ons-back-button></div>
+  <!-- <div class="center"></div> -->
+  <!-- <div class="right">
+    <i class="fa fa-shopping-cart" style="position: fixed;top: 1%;right: 2%;color:#fff;margin:2%;z-index: -1;background: rgba(0,0,0,0.5);border-radius: 50%;font-size: .8em;padding:8px"></i>
+    <span class="new badge" style="color:#fff;position:absolute;right:1%;top:3%;border-radius: 50% !important;min-width: .25rem !important;background: #F75C4C !important" data-badge-caption="" id="totcart2">0</span>
+
+  </div> -->
+</ons-toolbar>
+<ons-toolbar style="background: transparent !important;position: fixed">
+          <div class="left"><i class="fa fa-chevron-left" style="color:#fff;position: fixed;margin:3%;z-index: -1;background: rgba(0,0,0,0.5);border-radius: 50%;font-size: .8em;padding:8px;padding-left: 10px;padding-right: 12px"></i><ons-back-button style="color: #ddd !important"></ons-back-button></div>
+          <!-- <div class="center"></div> -->
+          <!-- <div class="right">
+            <i class="fa fa-shopping-cart" style="position: fixed;top: 1%;right: 2%;color:#fff;margin:2%;z-index: -1;background: rgba(0,0,0,0.5);border-radius: 50%;font-size: .8em;padding:8px"></i>
+            <span class="new badge" style="color:#fff;position:absolute;right:1%;top:3%;border-radius: 50% !important;min-width: .25rem !important;background: #F75C4C !important" data-badge-caption="" id="totcart2">0</span>
+
+          </div> -->
+        </ons-toolbar>
+        <div class="wrapper fadeInDown">
+          <div id="formContent">
+             <!-- Icon -->
+            <div class="fadeIn first">
+              <!-- <label>Del2Home</label> -->
+              <img src="img/logo.png" style="width: 40%">
+            </div>
+
+            <!-- Tabs Titles -->
+            <!-- <h2 class="active"> Signin </h2> -->
+            <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+           
+
+            <!-- Login Form -->
+              <!-- <select class="fadeIn second selog" id="utype">
+                <option>Select Role</option>
+                <option value="customer">Customer</option>
+                <option value="retailer">Retailer</option>
+                <option value="distributor">Distributor</option>
+                <option value="driver">Driver</option>
+              </select> -->
+              <ons-row style="text-align: center">
+  <ons-col width="100%">
+      <!-- <ons-card> -->
+    <section id="services" class="services">
+          <div class="container">
+            
+            <div class="row justify-content-center">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+          <div id="sendingrequest"></div>
+          <div id="content">
+              <form id="register-cons">
+          <h6>PERSONAL INFORMATION :</h6>
+          
+          <div class="row">
+            <section style="padding: 8px">
+              <label style="margin: 0;">Firstname</label>
+              <input type="text" class="text-input" id="firstname" ng-model="text" placeholder="" style="display: block; width: 100%" required="">
+            </section>
+
+          </div>
+          <div class="row">
+            <section style="padding: 8px">
+              <label style="margin: 0;">Lastname</label>
+              <input type="text" class="text-input" id="lastname" ng-model="text" placeholder="" style="display: block; width: 100%" required="">
+            </section>
+
+          </div>
+          <div class="row">
+            <section style="padding: 8px">
+              <label style="margin: 0;">Email Address</label>
+              <input type="text" class="text-input" id="emailaddress" ng-model="text" placeholder="" style="display: block; width: 100%" required="">
+            </section>
+
+          </div>
+          <div class="row">
+            <section style="padding: 8px">
+              <label style="margin: 0;">Contact Number</label>
+              <input type="text" class="text-input" id="contactnumber" ng-model="text" placeholder="" style="display: block; width: 100%" required="">
+            </section>
+
+          </div>
+                <br>
+                <b>ACCOUNT INFORMATION : </b>
+                
+          <div class="row">
+            <section style="padding: 8px">
+              <label style="margin: 0;">Username</label>
+              <input type="text" class="text-input" id="username-cons" ng-model="text" placeholder="" style="display: block; width: 100%" required="">
+            </section>
+
+          </div>
+          <div class="row">
+            <section style="padding: 8px">
+              <label style="margin: 0;">Password</label>
+              <input type="text" class="text-input" id="password-cons" ng-model="text" placeholder="" style="display: block; width: 100%" required="">
+            </section>
+
+          </div>
+          
+          <div class="row">
+            <div class="">
+            <input type="submit" value="Register" id="register-cons-btn" class="btn btn-primary btn-block btn-lg" tabindex="7">
+            </div>
+          </div>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+  <!-- </ons-card> -->
+  </ons-col>
+  
+</ons-row>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+              <label>Already have an account?</label>
+              <a class="underlineHover" href="#" onclick="gotoLogin()"> Signin</a><br>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+</ons-page>
+
